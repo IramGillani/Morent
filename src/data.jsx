@@ -647,3 +647,15 @@ export const footerLinks = [
     ],
   },
 ];
+export const cities = [
+  "Karachi",
+  "Lahore",
+  "Islamabad",
+  "Rawalpindi",
+  "Faisalabad",
+  "Multan",
+  "Peshawar",
+  "Quetta",
+  "Sialkot",
+  "Hyderabad",
+];

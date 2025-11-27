@@ -29,6 +29,9 @@
   h5 {
     @apply text-primary-blue uppercase text-[16px] tracking-wide font-medium;
   }
+  h6 {
+    @apply text-primary-text text-[16px] font-extrabold;
+  }
 }
 @layer utilities {
   .nav-link {
@@ -81,5 +84,24 @@
   }
   .sidebar::-webkit-scrollbar-track {
     margin-block: 20px; /* makes thumb shorter */
+  }
+  .circular-pattern {
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background-image: repeating-radial-gradient(
+        circle at 0 0,
+        transparent 0,
+        #e5e5f7 10px
+      ),
+      repeating-linear-gradient(#444cf755, #444cf7);
+  }
+  .angular-bracket-pattern {
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background: linear-gradient(135deg, #444cf755 25%, transparent 25%) -10px 0/
+        20px 20px,
+      linear-gradient(225deg, #444cf7 25%, transparent 25%) -10px 0/ 20px 20px,
+      linear-gradient(315deg, #444cf755 25%, transparent 25%) 0px 0/ 20px 20px,
+      linear-gradient(45deg, #444cf7 25%, #e5e5f7 25%) 0px 0/ 20px 20px;
   }
 }
