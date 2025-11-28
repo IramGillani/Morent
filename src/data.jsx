@@ -647,3 +647,15 @@ export const footerLinks = [
     ],
   },
 ];
+export const cities = [
+  { id: 1, name: "Karachi" },
+  { id: 2, name: "Lahore" },
+  { id: 3, name: "Islamabad" },
+  { id: 4, name: "Rawalpindi" },
+  { id: 5, name: "Peshawar" },
+  { id: 6, name: "Quetta" },
+  { id: 7, name: "Faisalabad" },
+  { id: 8, name: "Multan" },
+  { id: 9, name: "Hyderabad" },
+  { id: 10, name: "Sialkot" },
+];
