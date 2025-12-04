@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Clock } from "lucide-react";
+import { useState, useEffect } from "react";
+
 import {
   Popover,
   PopoverTrigger,
@@ -16,19 +16,31 @@ import {
 import { Toggle } from "@/components/ui/toggle";
 import { cn } from "@/lib/utils";
 
-export default function TimePicker() {
-  const [time, setTime] = useState(null);
-  const [period, setPeriod] = useState("AM"); // AM / PM
+export default function TimePicker({ value, change }) {
+  const [time, setTime] = useState({ hour: null, minute: null });
+  const [period, setPeriod] = useState("AM");
 
-  // generate 12-hour times
-  const times = [];
-  for (let hour = 1; hour <= 12; hour++) {
-    for (let minutes of ["00", "15", "30", "45"]) {
-      times.push(`${hour.toString().padStart(2, "0")}:${minutes}`);
-    }
-  }
+  // generate values
+  const hours = Array.from({ length: 12 }, (_, i) =>
+    String(i + 1).padStart(2, "0")
+  );
+  const minutes = Array.from({ length: 60 }, (_, i) =>
+    String(i).padStart(2, "0")
+  );
 
-  const finalTime = time ? `${time} ${period}` : null;
+  useEffect(() => {
+    if (!value) return;
+
+    const [t, p] = value.split(" ");
+    const [h, m] = t.split(":");
+
+    setTime({ hour: h, minute: m });
+    setPeriod(p);
+  }, [value]);
+
+  // build formatted time
+  const finalTime =
+    time.hour && time.minute ? `${time.hour}:${time.minute} ${period}` : null;
 
   return (
     <Popover>
@@ -36,50 +48,82 @@ export default function TimePicker() {
         <Button
           variant="outline"
           className={cn(
-            "w-[200px] justify-start text-left font-normal",
+            "w-40 justify-start text-left font-normal",
             !finalTime && "text-muted-foreground"
           )}
         >
-          <Clock className="mr-2 h-4 w-4" />
-          {finalTime || "Select time"}
+          {finalTime ?? "Select Time"}
         </Button>
       </PopoverTrigger>
 
-      <PopoverContent className="w-[240px] p-0">
-        <div className="flex items-center justify-between p-2 border-b">
+      <PopoverContent className="w-64 p-0">
+        {/* AM/PM Toggle */}
+        <div className="flex items-center justify-between px-3 py-2 border-b">
           <span className="text-sm text-muted-foreground">AM / PM</span>
           <div className="flex gap-2">
             <Toggle
               pressed={period === "AM"}
-              onPressedChange={() => setPeriod("AM")}
+              onPressedChange={() => {
+                setPeriod("AM");
+                if (time.hour && time.minute) {
+                  change(`${time.hour}:${time.minute} AM`);
+                }
+              }}
+              className="px-3"
             >
               AM
             </Toggle>
             <Toggle
               pressed={period === "PM"}
-              onPressedChange={() => setPeriod("PM")}
+              onPressedChange={() => {
+                setPeriod("PM");
+                if (time.hour && time.minute) {
+                  change(`${time.hour}:${time.minute} PM`);
+                }
+              }}
+              className="px-3"
             >
               PM
             </Toggle>
           </div>
         </div>
 
+        {/* Hours / Minutes selection */}
         <Command>
           <CommandInput placeholder="Search time..." />
           <CommandEmpty>No time found.</CommandEmpty>
 
-          <CommandGroup>
-            {times.map((t) => (
-              <CommandItem
-                key={t}
-                value={t}
-                onSelect={() => setTime(t)}
-                className="cursor-pointer"
-              >
-                {t}
-              </CommandItem>
-            ))}
-          </CommandGroup>
+          <div className="grid grid-cols-2 gap-2 max-h-60 overflow-y-auto px-3 pb-3">
+            {/* Hours */}
+            <CommandGroup heading="Hours">
+              {hours.map((h) => (
+                <CommandItem
+                  key={h}
+                  onSelect={() => {
+                    setTime((prev) => ({ ...prev, hour: h }));
+                    change(`${h}:${time.minute ?? "00"} ${period}`);
+                  }}
+                >
+                  {h}
+                </CommandItem>
+              ))}
+            </CommandGroup>
+
+            {/* Minutes */}
+            <CommandGroup heading="Minutes">
+              {minutes.map((m) => (
+                <CommandItem
+                  key={m}
+                  onSelect={() => {
+                    setTime((prev) => ({ ...prev, minute: m }));
+                    change(`${time.hour ?? "01"}:${m} ${period}`);
+                  }}
+                >
+                  {m}
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          </div>
         </Command>
       </PopoverContent>
     </Popover>
