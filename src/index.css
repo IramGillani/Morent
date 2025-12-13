@@ -6,31 +6,35 @@
   --color-secondry-text: #3d5278;
   --color-tertiary-text: #90a3bf;
   --color-liked: #ed3f3f;
+  --color-lightBg: dee3ec;
   --font-jakarta: "Plus Jakarta Sans", sans-serif;
 }
 @layer base {
   body {
     font-family: var(--font-jakarta);
     color: var(--color-primary-text);
-    background-color: rgb(222, 220, 241);
+    background-color: var(--color-lightBg);
   }
   nav {
     @apply flex flex-wrap justify-between items-center text-secondry-text md:px-4 py-2 gap-4;
   }
+  h1 {
+    @apply capitalize text-2xl tracking-wide font-bold text-white;
+  }
   h2 {
-    @apply text-primary-text uppercase text-xl tracking-wide font-bold;
+    @apply text-primary-blue uppercase text-xl tracking-wide font-bold;
   }
   h3 {
-    @apply text-2xl text-primary-text capitalize font-bold;
+    @apply text-primary-text capitalize font-bold;
   }
   h4 {
-    @apply text-primary-blue uppercase text-xl tracking-wide font-medium;
+    @apply text-primary-text capitalize text-[16px] tracking-wide font-medium;
   }
   h5 {
-    @apply text-primary-blue uppercase text-[16px] tracking-wide font-medium;
+    @apply text-tertiary-text uppercase text-[14px] tracking-wide font-medium;
   }
   h6 {
-    @apply text-primary-text text-[16px] font-extrabold;
+    @apply text-primary-text text-[12px] font-extrabold;
   }
 }
 @layer utilities {

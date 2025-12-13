@@ -1,6 +1,5 @@
 import { IoSwapVertical } from "react-icons/io5";
-import { DatePickerComponent } from "@syncfusion/ej2-react-calendars";
-import { TimePicker } from "@syncfusion/ej2-react-calendars";
+// import DatePicker from "./DatePicker";
 
 import { cities } from "./data";
 import { useState } from "react";
@@ -88,11 +87,11 @@ const BookingInfo = () => {
                 </select>
               </label>
             </div>
-            <div className="flex flex-col gap-4">
+            {/* <div className="flex flex-col gap-4">
               <h6>Date</h6>{" "}
               <label htmlFor="date">
                 {" "}
-                <DatePickerComponent
+                <DatePicker
                   value={formData.pickupDate}
                   placeholder="Select a date"
                   change={() => handleChange}
@@ -109,7 +108,7 @@ const BookingInfo = () => {
                   />
                 </label>{" "}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </>
