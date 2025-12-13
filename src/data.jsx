@@ -15,6 +15,7 @@ export const carsData = {
   sports: [
     {
       id: 1,
+      id: 1,
       name: "Porsche 911 Carrera",
       fuelTankCapacity: "63 L",
       rent: 90.25,
@@ -31,6 +32,7 @@ export const carsData = {
         "Experience the perfect blend of performance and luxury with this iconic sports car.",
     },
     {
+      id: 2,
       id: 2,
       name: "Chevrolet Corvette",
       fuelTankCapacity: "70 L",
@@ -49,6 +51,7 @@ export const carsData = {
     },
     {
       id: 3,
+      id: 3,
       name: "Ford Mustang GT",
       fuelTankCapacity: "61 L",
       rent: 53.4,
@@ -65,6 +68,7 @@ export const carsData = {
         "Experience the perfect blend of performance and luxury with this iconic sports car.",
     },
     {
+      id: 4,
       id: 4,
       name: "Nissan GT-R",
       fuelTankCapacity: "74 L",
@@ -83,6 +87,7 @@ export const carsData = {
     },
     {
       id: 5,
+      id: 5,
       name: "Lamborghini Huracán",
       fuelTankCapacity: "83 L",
       rent: 91.2,
@@ -99,6 +104,7 @@ export const carsData = {
         "Experience the perfect blend of performance and luxury with this iconic sports car.",
     },
     {
+      id: 6,
       id: 6,
       name: "Ferrari F8 Tributo",
       fuelTankCapacity: "78 L",
@@ -117,6 +123,7 @@ export const carsData = {
     },
     {
       id: 7,
+      id: 7,
       name: "McLaren 720S",
       fuelTankCapacity: "72 L",
       rent: 93.5,
@@ -133,6 +140,7 @@ export const carsData = {
         "Experience the perfect blend of performance and luxury with this iconic sports car.",
     },
     {
+      id: 8,
       id: 8,
       name: "Aston Martin Vantage",
       fuelTankCapacity: "73 L",
@@ -151,6 +159,7 @@ export const carsData = {
     },
     {
       id: 9,
+      id: 9,
       name: "Jaguar F-Type",
       fuelTankCapacity: "70 L",
       rent: 78.9,
@@ -167,6 +176,7 @@ export const carsData = {
         "Experience the perfect blend of performance and luxury with this iconic sports car.",
     },
     {
+      id: 10,
       id: 10,
       name: "Toyota GR Supra",
       fuelTankCapacity: "52 L",
@@ -185,6 +195,7 @@ export const carsData = {
     },
     {
       id: 11,
+      id: 11,
       name: "Mazda MX-5 Miata",
       fuelTankCapacity: "45 L",
       rent: 30.77,
@@ -201,6 +212,7 @@ export const carsData = {
         "Experience the perfect blend of performance and luxury with this iconic sports car.",
     },
     {
+      id: 12,
       id: 12,
       name: "Audi R8",
       fuelTankCapacity: "73 L",
@@ -219,6 +231,7 @@ export const carsData = {
     },
     {
       id: 13,
+      id: 13,
       name: "BMW Z4 Roadster",
       fuelTankCapacity: "52 L",
       rent: 51.0,
@@ -235,6 +248,7 @@ export const carsData = {
         "Experience the perfect blend of performance and luxury with this iconic sports car.",
     },
     {
+      id: 14,
       id: 14,
       name: "Porsche Cayman 718",
       fuelTankCapacity: "54 L",
@@ -255,6 +269,7 @@ export const carsData = {
   suv: [
     {
       id: 15,
+      id: 15,
       name: "Toyota Land Cruiser",
       fuelTankCapacity: "110 L",
       rent: 66,
@@ -271,6 +286,7 @@ export const carsData = {
         "Perfect for families and adventurers, offering space, comfort, and rugged capability.",
     },
     {
+      id: 16,
       id: 16,
       name: "Range Rover Sport",
       fuelTankCapacity: "90 L",
@@ -289,6 +305,7 @@ export const carsData = {
     },
     {
       id: 17,
+      id: 17,
       name: "BMW X5",
       fuelTankCapacity: "80 L",
       rent: 60,
@@ -305,6 +322,7 @@ export const carsData = {
         "Perfect for families and adventurers, offering space, comfort, and rugged capability.",
     },
     {
+      id: 18,
       id: 18,
       name: "Mercedes-Benz G-Class",
       fuelTankCapacity: "100 L",
@@ -323,6 +341,7 @@ export const carsData = {
     },
     {
       id: 19,
+      id: 19,
       name: "Audi Q7",
       fuelTankCapacity: "75 L",
       rent: 53,
@@ -339,6 +358,7 @@ export const carsData = {
         "Perfect for families and adventurers, offering space, comfort, and rugged capability.",
     },
     {
+      id: 20,
       id: 20,
       name: "Kia Telluride",
       fuelTankCapacity: "70 L",
@@ -357,6 +377,7 @@ export const carsData = {
     },
     {
       id: 21,
+      id: 21,
       name: "Hyundai Palisade",
       fuelTankCapacity: "71 L",
       rent: 42.5,
@@ -373,6 +394,7 @@ export const carsData = {
         "Perfect for families and adventurers, offering space, comfort, and rugged capability.",
     },
     {
+      id: 22,
       id: 22,
       name: "Lexus RX 350",
       fuelTankCapacity: "72 L",
@@ -391,6 +413,7 @@ export const carsData = {
     },
     {
       id: 23,
+      id: 23,
       name: "Honda CR-V",
       fuelTankCapacity: "57 L",
       rent: 28.5,
@@ -407,6 +430,7 @@ export const carsData = {
         "Perfect for families and adventurers, offering space, comfort, and rugged capability.",
     },
     {
+      id: 24,
       id: 24,
       name: "Toyota Fortuner",
       fuelTankCapacity: "80 L",
@@ -425,6 +449,7 @@ export const carsData = {
     },
     {
       id: 25,
+      id: 25,
       name: "Jeep Grand Cherokee",
       fuelTankCapacity: "93 L",
       rent: 52,
@@ -441,6 +466,7 @@ export const carsData = {
         "Perfect for families and adventurers, offering space, comfort, and rugged capability.",
     },
     {
+      id: 26,
       id: 26,
       name: "Nissan Patrol",
       fuelTankCapacity: "140 L",
@@ -459,6 +485,7 @@ export const carsData = {
     },
     {
       id: 27,
+      id: 27,
       name: "Mazda CX-90",
       fuelTankCapacity: "74 L",
       rent: 34,
@@ -475,6 +502,7 @@ export const carsData = {
         "Perfect for families and adventurers, offering space, comfort, and rugged capability.",
     },
     {
+      id: 28,
       id: 28,
       name: "Volvo XC90",
       fuelTankCapacity: "71 L",
@@ -495,6 +523,7 @@ export const carsData = {
   mpv: [
     {
       id: 29,
+      id: 29,
       name: "Toyota Innova Crysta",
       fuelTankCapacity: "55 L",
       rent: 24,
@@ -511,6 +540,7 @@ export const carsData = {
         "Spacious and versatile, this multi-purpose vehicle is ideal for group travel and long trips.",
     },
     {
+      id: 30,
       id: 30,
       name: "Kia Carnival",
       fuelTankCapacity: "60 L",
@@ -529,6 +559,7 @@ export const carsData = {
     },
     {
       id: 31,
+      id: 31,
       name: "Honda Odyssey",
       fuelTankCapacity: "68 L",
       rent: 32,
@@ -545,6 +576,7 @@ export const carsData = {
         "Spacious and versatile, this multi-purpose vehicle is ideal for group travel and long trips.",
     },
     {
+      id: 32,
       id: 32,
       name: "Hyundai Staria",
       fuelTankCapacity: "75 L",
@@ -563,6 +595,7 @@ export const carsData = {
     },
     {
       id: 33,
+      id: 33,
       name: "Toyota Alphard",
       fuelTankCapacity: "75 L",
       rent: 65,
@@ -579,6 +612,7 @@ export const carsData = {
         "Spacious and versatile, this multi-purpose vehicle is ideal for group travel and long trips.",
     },
     {
+      id: 34,
       id: 34,
       name: "Nissan Serena",
       fuelTankCapacity: "55 L",
@@ -597,6 +631,7 @@ export const carsData = {
     },
     {
       id: 35,
+      id: 35,
       name: "Suzuki Ertiga",
       fuelTankCapacity: "45 L",
       rent: 15,
@@ -613,6 +648,7 @@ export const carsData = {
         "Spacious and versatile, this multi-purpose vehicle is ideal for group travel and long trips.",
     },
     {
+      id: 36,
       id: 36,
       name: "Daihatsu Xenia",
       fuelTankCapacity: "43 L",
@@ -631,6 +667,7 @@ export const carsData = {
     },
     {
       id: 37,
+      id: 37,
       name: "Proton Exora",
       fuelTankCapacity: "55 L",
       rent: 19.5,
@@ -647,6 +684,7 @@ export const carsData = {
         "Spacious and versatile, this multi-purpose vehicle is ideal for group travel and long trips.",
     },
     {
+      id: 38,
       id: 38,
       name: "Mitsubishi Xpander",
       fuelTankCapacity: "45 L",
@@ -665,6 +703,7 @@ export const carsData = {
     },
     {
       id: 39,
+      id: 39,
       name: "Mazda Biante",
       fuelTankCapacity: "52 L",
       rent: 23,
@@ -681,6 +720,7 @@ export const carsData = {
         "Spacious and versatile, this multi-purpose vehicle is ideal for group travel and long trips.",
     },
     {
+      id: 40,
       id: 40,
       name: "Toyota Avanza",
       fuelTankCapacity: "43 L",
@@ -699,6 +739,7 @@ export const carsData = {
     },
     {
       id: 41,
+      id: 41,
       name: "Peugeot Traveller",
       fuelTankCapacity: "69 L",
       rent: 40.5,
@@ -715,6 +756,7 @@ export const carsData = {
         "Spacious and versatile, this multi-purpose vehicle is ideal for group travel and long trips.",
     },
     {
+      id: 42,
       id: 42,
       name: "Mercedes-Benz V-Class",
       fuelTankCapacity: "70 L",
@@ -735,6 +777,7 @@ export const carsData = {
   sedan: [
     {
       id: 43,
+      id: 43,
       name: "Toyota Camry",
       fuelTankCapacity: "60 L",
       rent: 22,
@@ -751,6 +794,7 @@ export const carsData = {
         "A comfortable and stylish choice for daily commutes and city cruising.",
     },
     {
+      id: 44,
       id: 44,
       name: "Honda Accord",
       fuelTankCapacity: "56 L",
@@ -769,6 +813,7 @@ export const carsData = {
     },
     {
       id: 45,
+      id: 45,
       name: "BMW 3 Series",
       fuelTankCapacity: "59 L",
       rent: 38,
@@ -785,6 +830,7 @@ export const carsData = {
         "A comfortable and stylish choice for daily commutes and city cruising.",
     },
     {
+      id: 46,
       id: 46,
       name: "Mercedes-Benz C-Class",
       fuelTankCapacity: "66 L",
@@ -803,6 +849,7 @@ export const carsData = {
     },
     {
       id: 47,
+      id: 47,
       name: "Audi A4",
       fuelTankCapacity: "54 L",
       rent: 36.5,
@@ -819,6 +866,7 @@ export const carsData = {
         "A comfortable and stylish choice for daily commutes and city cruising.",
     },
     {
+      id: 48,
       id: 48,
       name: "Hyundai Sonata",
       fuelTankCapacity: "60 L",
@@ -837,6 +885,7 @@ export const carsData = {
     },
     {
       id: 49,
+      id: 49,
       name: "Kia K5",
       fuelTankCapacity: "60 L",
       rent: 19,
@@ -853,6 +902,7 @@ export const carsData = {
         "A comfortable and stylish choice for daily commutes and city cruising.",
     },
     {
+      id: 50,
       id: 50,
       name: "Tesla Model 3",
       fuelTankCapacity: "— (EV)",
@@ -871,6 +921,7 @@ export const carsData = {
     },
     {
       id: 51,
+      id: 51,
       name: "Nissan Altima",
       fuelTankCapacity: "60 L",
       rent: 22,
@@ -887,6 +938,7 @@ export const carsData = {
         "A comfortable and stylish choice for daily commutes and city cruising.",
     },
     {
+      id: 52,
       id: 52,
       name: "Mazda 6",
       fuelTankCapacity: "62 L",
@@ -905,6 +957,7 @@ export const carsData = {
     },
     {
       id: 53,
+      id: 53,
       name: "Volkswagen Passat",
       fuelTankCapacity: "66 L",
       rent: 23,
@@ -921,6 +974,7 @@ export const carsData = {
         "A comfortable and stylish choice for daily commutes and city cruising.",
     },
     {
+      id: 54,
       id: 54,
       name: "Peugeot 508",
       fuelTankCapacity: "62 L",
@@ -939,6 +993,7 @@ export const carsData = {
     },
     {
       id: 55,
+      id: 55,
       name: "Lexus ES 350",
       fuelTankCapacity: "65 L",
       rent: 36.5,
@@ -955,6 +1010,7 @@ export const carsData = {
         "A comfortable and stylish choice for daily commutes and city cruising.",
     },
     {
+      id: 56,
       id: 56,
       name: "Honda City",
       fuelTankCapacity: "40 L",

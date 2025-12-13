@@ -1,15 +1,10 @@
 import { IoSwapVertical } from "react-icons/io5";
-// import DatePicker from "./DatePicker";
+import { DatePickerComponent } from "@syncfusion/ej2-react-calendars";
+import { TimePicker } from "@syncfusion/ej2-react-calendars";
 
 import { cities } from "./data";
 import { useState } from "react";
 const BookingInfo = () => {
-  // const [pickupLocation, setPickupLocation] = useState("Mul");
-  // const [dropoffLocation, setDropoffLocation] = useState("");
-  // const [pickupdate, setPickupDate] = useState("");
-  // const [dropoffDate, setDropoffDate] = useState("");
-  // const [pickupTime, setPickupTime] = useState("");
-  // const [dropoffTime, setDropoffTime] = useState("");
   const [formData, setFormData] = useState({
     pickupLocation: "Mul",
     dropoffLocation: "Lhr",
@@ -80,18 +75,17 @@ const BookingInfo = () => {
                   </option>
                   {cities.map((city) => (
                     <option key={city} value={city}>
-                      {/* {console.log(pickupLocation)} */}
                       {city}
                     </option>
                   ))}
                 </select>
               </label>
             </div>
-            {/* <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4">
               <h6>Date</h6>{" "}
               <label htmlFor="date">
                 {" "}
-                <DatePicker
+                <DatePickerComponent
                   value={formData.pickupDate}
                   placeholder="Select a date"
                   change={() => handleChange}
@@ -99,16 +93,9 @@ const BookingInfo = () => {
               </label>{" "}
               <div className="flex flex-col gap-4">
                 <h6>Date</h6>
-                <label htmlFor="time">
-                  {" "}
-                  <TimePicker
-                    value={formData.pickupTime}
-                    placeholder="Select a date"
-                    change={() => handleChange}
-                  />
-                </label>{" "}
+                <label htmlFor="time"> </label>{" "}
               </div>
-            </div> */}
+            </div>{" "}
           </div>
         </div>
       </>

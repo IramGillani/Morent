@@ -42,8 +42,15 @@ const Card = ({
           <div className="flex gap-0.5 items-center">
             <FaGasPump />
             <span>{fuelTankCapacity}L</span>
+            <span>{fuelTankCapacity}L</span>
           </div>
           <div className="flex gap-0.5 items-center">
+            {transmission === "Manual" ? (
+              <TbSteeringWheel />
+            ) : (
+              <TbAutomaticGearbox />
+            )}
+            <span>{transmission}</span>
             {transmission === "Manual" ? (
               <TbSteeringWheel />
             ) : (
@@ -53,6 +60,7 @@ const Card = ({
           </div>
           <div className="flex gap-0.5 items-center">
             <BsFillPeopleFill />
+            {seatingCapacity}
             {seatingCapacity}
           </div>
         </div>
@@ -64,6 +72,7 @@ const Card = ({
                 / day
               </span>
             </h3>
+
             {/* <span>{actualRent ? actualRent : 'Not defined'}</span> */}
             <span className="text-secondry-text line-through lowercase text-[12px] lg:text-sm">
               ${actualRent ?? ""}/ day
