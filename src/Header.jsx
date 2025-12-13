@@ -5,7 +5,7 @@ const Header = () => {
     <header className="grid grid-cols-1 sm:grid-cols-2 gap-8 space-x-2 space-y-1">
       <div className="circular-pattern w-full p-4 text-white rounded-lg relative h-80">
         <div className="max-w-sm">
-          <h2 className="mb-2 text-white">The Best Platform for Car Rental</h2>
+          <h1 className="mb-2 text-white">The Best Platform for Car Rental</h1>
           <p className="mb-2">
             Ease of doing a car rental safely and reliably. Of course at a low
             price
@@ -21,9 +21,9 @@ const Header = () => {
       </div>
       <div className="circular-pattern w-full p-4 text-white rounded-lg relative h-80">
         <div className="max-w-sm">
-          <h2 className="mb-2 text-white">
+          <h1 className="mb-2 text-white">
             Easy way to rent a car at a low price
-          </h2>
+          </h1>
           <p className="mb-2">
             Providing cheap car rental servicqes and safe and comfortable
             facilities.e

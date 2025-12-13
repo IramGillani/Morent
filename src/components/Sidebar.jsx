@@ -88,7 +88,6 @@ const Sidebar = ({ title = "Type", cars, setCars }) => {
           Max.${Number(price).toFixed(2)}
         </span>
       </div>
-      {/* <MaxValueSlider /> */}
     </div>
   );
 };

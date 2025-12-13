@@ -23,7 +23,7 @@ const Card = ({
       <div className="px-[31px] py-[11px] rounded-lg shadow-2xl w-full  bg-white">
         <header className="flex justify-between items-center">
           <div>
-            <h2 className="text-primary-text">{name}</h2>
+            <h3 className="text-primary-text">{name}</h3>
             <span className="text-tertiary-text font-bold">{category}</span>
           </div>
           <IoHeart
