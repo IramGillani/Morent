@@ -4,20 +4,37 @@ import { BsFillPeopleFill } from "react-icons/bs";
 import { TbSteeringWheel } from "react-icons/tb";
 import { TbAutomaticGearbox } from "react-icons/tb";
 import { useState } from "react";
+import { carsData } from "@/data";
 import Button from "./Button";
 const Card = ({
   img = "./car1.png",
   name = "Koenigsegg",
   category = "sport",
-  isFavourite = true,
-  toggleFavourite,
+  favourite = true,
+  alt,
   fuelTankCapacity = 90,
   seatingCapacity = 2,
   rent = 99567,
   actualRent = 100,
   transmission = "Manual",
-  carDetail = "a white car",
 }) => {
+  const [likedCars, setLikedCars] = useState(
+    Object.values(carsData)
+      .flat()
+      .filter((car) => car.favourite)
+      .map((car) => car.name) // <-- store only names
+  );
+
+  const isFavourite = likedCars.includes(name);
+
+  const toggleFavourite = (name) => {
+    setLikedCars(
+      (prev) =>
+        prev.includes(name)
+          ? prev.filter((item) => item !== name) // remove if unliked
+          : [...prev, name] // add if liked
+    );
+  };
   return (
     <>
       <div className="px-[31px] py-[11px] rounded-lg shadow-2xl w-full  bg-white">
@@ -28,14 +45,14 @@ const Card = ({
           </div>
           <IoHeart
             className={`${
-              isFavourite ? "text-liked" : "text-tertiary-text"
+              likedCars.includes(name) ? "text-liked" : "text-tertiary-text"
             } text-xl `}
-            onClick={() => toggleFavourite()}
+            onClick={() => toggleFavourite(name)}
           />
         </header>
         <img
           src={img}
-          alt={carDetail}
+          alt={alt}
           className="object-cover object-center w-full h-52 "
         />
         <div className="flex gap-2 mb-4 mt-4 text-secondry-text justify-between">

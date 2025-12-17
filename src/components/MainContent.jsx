@@ -1,10 +1,15 @@
 import { useState, useEffect } from "react";
 import { carsData } from "../data";
 import Card from "./Card";
+import { CarIcon } from "lucide-react";
 
-export default function CarGrid() {
+export default function CarGrid({ cars, setCars }) {
   const itemsPerPage = 6;
+  const [visibleCount, setVisibleCount] = useState(itemsPerPage);
 
+  const handleShowMore = () => {
+    setVisibleCount((prev) => prev + itemsPerPage);
+  };
   const getAllCars = () => {
     const categories = Object.keys(carsData);
 
@@ -22,33 +27,10 @@ export default function CarGrid() {
   // shuffle array for randomness
   const shuffle = (arr) => [...arr].sort(() => Math.random() - 0.5);
 
-  const [cars, setCars] = useState([]);
-  const [visibleCount, setVisibleCount] = useState(itemsPerPage);
-
-  const [likedCars, setLikedCars] = useState(
-    Object.values(carsData)
-      .flat()
-      .filter((car) => car.favourite)
-      .map((car) => car.name) // <-- store only names
-  );
-
-  const toggleFavourite = (name) => {
-    setLikedCars(
-      (prev) =>
-        prev.includes(name)
-          ? prev.filter((item) => item !== name) // remove if unliked
-          : [...prev, name] // add if liked
-    );
-  };
-
   useEffect(() => {
     const shuffled = shuffle(getAllCars());
     setCars(shuffled);
   }, []);
-
-  const handleShowMore = () => {
-    setVisibleCount((prev) => prev + itemsPerPage);
-  };
 
   return (
     <>
@@ -56,15 +38,10 @@ export default function CarGrid() {
       <div
         className="grid 
         grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4
-        gap-6 py-4"
+        gap-6 py-8 px-2"
       >
         {cars.slice(0, visibleCount).map((car) => (
-          <Card
-            key={car.id}
-            {...car}
-            isFavourite={likedCars.includes(car.name)}
-            toggleFavourite={() => toggleFavourite(car.name)}
-          />
+          <Card key={car.id} {...car} category={car?.category} />
         ))}
       </div>
 
