@@ -3,7 +3,7 @@ import { carsData } from "../data";
 
 const Sidebar = ({ title = "Type", setCars }) => {
   const [price, setPrice] = useState(100);
-  const min = 0;
+  const min = 10;
   const max = 100;
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedCapacity, setSelectedCapacity] = useState(null);
@@ -17,7 +17,6 @@ const Sidebar = ({ title = "Type", setCars }) => {
         category,
       }))
     );
-    console.log(allCars);
 
     if (selectedCategory) {
       allCars = allCars.filter((car) => car.category === selectedCategory);
@@ -32,7 +31,6 @@ const Sidebar = ({ title = "Type", setCars }) => {
     allCars = allCars.filter((car) => car.rent <= price);
 
     setCars(allCars);
-    console.log(allCars);
   }, [selectedCategory, selectedCapacity, price]);
 
   const handlePriceBg = () => {
