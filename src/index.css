@@ -1,33 +1,44 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 @theme {
   --color-primary-blue: #3563e9;
   --color-primary-text: #1a202c;
   --color-secondry-text: #3d5278;
   --color-tertiary-text: #90a3bf;
   --color-liked: #ed3f3f;
+  --color-lightBg: dee3ec;
   --font-jakarta: "Plus Jakarta Sans", sans-serif;
+  --breakpoint-sm: 54rem;
 }
 @layer base {
   body {
     font-family: var(--font-jakarta);
     color: var(--color-primary-text);
-    background-color: rgb(222, 220, 241);
+    background-color: #fff;
   }
   nav {
     @apply flex flex-wrap justify-between items-center text-secondry-text md:px-4 py-2 gap-4;
   }
+  h1 {
+    @apply capitalize text-2xl tracking-wide font-bold text-white;
+  }
   h2 {
-    @apply text-primary-text uppercase text-xl tracking-wide font-bold;
+    @apply text-primary-blue uppercase text-xl tracking-wide font-bold;
   }
   h3 {
-    @apply text-2xl text-primary-text capitalize font-bold;
+    @apply text-primary-text capitalize font-bold;
   }
   h4 {
-    @apply text-primary-blue uppercase text-xl tracking-wide font-medium;
+    @apply text-primary-text capitalize text-[16px] tracking-wide font-medium;
   }
   h5 {
-    @apply text-primary-blue uppercase text-[16px] tracking-wide font-medium;
+    @apply text-tertiary-text uppercase text-[14px] tracking-wide font-medium;
+  }
+  h6 {
+    @apply text-primary-text text-[12px] font-extrabold;
   }
 }
 @layer utilities {
@@ -49,7 +60,7 @@
     font-size: 0.8rem;
   }
   input[type="range"] {
-    -webkit-appearance: none;
+    appearance: none;
     width: 100%;
     height: 8px;
     border-radius: 8px;
@@ -57,7 +68,14 @@
     outline: none;
     margin: 0;
     padding: 0;
+    --value: 0%;
+    background: linear-gradient(
+      to right,
+      var(--color-primary-blue) var(--value),
+      var(--color-tertiary-text) var(--value)
+    );
   }
+
   input[type="range"]::-webkit-slider-thumb {
     appearance: none;
     width: 20px;
@@ -65,7 +83,11 @@
     border-radius: 50%;
     background-color: var(--color-primary-blue);
     cursor: pointer;
-    transition: transform 0.15s ease, background 0.15s ease;
+    transition: transform 0.15s ease;
+  }
+  input[type="range"]:focus-visible {
+    outline: 2px solid var(--color-primary-blue);
+    outline-offset: 4px;
   }
   .sidebar {
     overflow-y: auto;
@@ -80,6 +102,38 @@
     @apply bg-primary-blue/40 rounded-sm border-20 border-transparent;
   }
   .sidebar::-webkit-scrollbar-track {
-    margin-block: 20px; /* makes thumb shorter */
+    margin-block: 20px;
+  }
+
+  /* Header's Circular Pattern */
+
+  .card-primary {
+    background-color: #1e40af; /* strong brand blue */
+    background-image: repeating-radial-gradient(
+        circle at 0 0,
+        transparent 0,
+        #1e40af 10px
+      ),
+      repeating-linear-gradient(
+        rgba(53, 99, 233, 0.45),
+        rgba(53, 99, 233, 0.45)
+      );
+
+    color: #ffffff;
+  }
+
+  .card-secondary {
+    background-color: #2c4fd8; /* lighter but still contrast-safe */
+    background-image: repeating-radial-gradient(
+        circle at 0 0,
+        transparent 0,
+        #2c4fd8 10px
+      ),
+      repeating-linear-gradient(
+        rgba(53, 99, 233, 0.25),
+        rgba(53, 99, 233, 0.25)
+      );
+
+    color: #ffffff;
   }
 }

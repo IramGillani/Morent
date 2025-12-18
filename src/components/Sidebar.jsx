@@ -1,15 +1,52 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { carsData } from "../data";
-import MaxValueSlider from "./MaxRangeSlider";
 
-const Sidebar = ({ title = "Type" }) => {
-  const [price, setPrice] = useState(0);
-  const min = 0;
-  const max = 1000;
-  const percent = ((price - min) / (max - min)) * 100;
+const Sidebar = ({ title = "Type", setCars }) => {
+  const [price, setPrice] = useState(100);
+  const min = 10;
+  const max = 100;
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCapacity, setSelectedCapacity] = useState(null);
 
+  const rangeRef = useRef(null);
+
+  useEffect(() => {
+    let allCars = Object.entries(carsData).flatMap(([category, cars]) =>
+      cars.map((car) => ({
+        ...car,
+        category,
+      }))
+    );
+
+    if (selectedCategory) {
+      allCars = allCars.filter((car) => car.category === selectedCategory);
+    }
+
+    if (selectedCapacity) {
+      allCars = allCars.filter(
+        (car) => car.seatingCapacity === selectedCapacity
+      );
+    }
+
+    allCars = allCars.filter((car) => car.rent <= price);
+
+    setCars(allCars);
+  }, [selectedCategory, selectedCapacity, price]);
+
+  const handlePriceBg = () => {
+    const el = rangeRef.current;
+    if (!el) return;
+
+    const percent = ((el.value - min) / (max - min)) * 100;
+    el.style.setProperty("--value", `${percent}%`);
+  };
+  useEffect(() => {
+    handlePriceBg();
+  }, []);
   return (
-    <div className=" w-0 h-0 md:w-1/4 md:h-dvh sidebar bg-[#f9f9f9] md:py-4 md:pl-2 md:pr-4">
+    <div
+      className={` w-0 h-0 md:w-full md:h-dvw sidebar md:py-4 md:pl-2 md:pr-4 sticky bg-white my-2 transform transition-transform duration-150 ease-in-out`}
+    >
       <h5 className="text-tertiary-text tracking-wider mb-4">{title}</h5>
 
       <ul className="flex flex-col gap-2 mb-6">
@@ -18,9 +55,15 @@ const Sidebar = ({ title = "Type" }) => {
             <label htmlFor={category}>
               <input
                 type="checkbox"
-                className="appearance-none w-5 h-5 border border-tertiary-text bg-transparent rounded-lg checked:bg-primary-blue checked:border-transparent custom-round"
+                className={`appearance-none w-5 h-5 border border-tertiary-text bg-transparent rounded-lg checked:bg-primary-blue checked:border-transparent custom-round`}
                 name={category}
                 id={category}
+                checked={selectedCategory === category}
+                onChange={() =>
+                  setSelectedCategory(
+                    selectedCategory === category ? null : category
+                  )
+                }
               />
             </label>
             <div className="flex items-center gap-2">
@@ -41,7 +84,14 @@ const Sidebar = ({ title = "Type" }) => {
                 type="checkbox"
                 className="appearance-none w-5 h-5 border border-tertiary-text bg-transparent rounded-lg checked:bg-primary-blue checked:border-transparent custom-round"
                 name={person}
+                value={person}
                 id={person}
+                checked={selectedCapacity === person}
+                onChange={() =>
+                  setSelectedCapacity(
+                    selectedCapacity === person ? null : person
+                  )
+                }
               />
             </label>
             <div className="flex items-center gap-2">
@@ -58,16 +108,19 @@ const Sidebar = ({ title = "Type" }) => {
         ))}
       </ul>
       <h5 className="text-tertiary-text tracking-wider mb-4">Price</h5>
-      <div className="slider-wrapper relative mb-2">
+      <div className=" relative mb-2 ">
         {" "}
         <input
+          ref={rangeRef}
           type="range"
           min={min}
           max={max}
           step="1"
           value={price}
-          id="custom-slider"
-          onChange={(e) => setPrice(e.target.value)}
+          onChange={(e) => {
+            setPrice(Number(e.target.value));
+            handlePriceBg();
+          }}
         />
       </div>
 
@@ -76,7 +129,6 @@ const Sidebar = ({ title = "Type" }) => {
           Max.${Number(price).toFixed(2)}
         </span>
       </div>
-      {/* <MaxValueSlider /> */}
     </div>
   );
 };
