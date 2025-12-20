@@ -10,7 +10,7 @@ const Card = ({
   img = "./car1.png",
   name = "Koenigsegg",
   category = "sport",
-  favourite = true,
+
   alt,
   fuelTankCapacity = 90,
   seatingCapacity = 2,

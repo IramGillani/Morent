@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { carsData } from "../data";
 import Card from "./Card";
-import { CarIcon } from "lucide-react";
 
 export default function CarGrid({ cars, setCars }) {
   const itemsPerPage = 6;
