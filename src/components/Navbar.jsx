@@ -4,8 +4,10 @@ import { FaBars } from "react-icons/fa";
 import { useState } from "react";
 import { carsData, navLinks } from "../data";
 import { useMemo } from "react";
+import { useFavourites } from "@/context/FavouritesContext";
 
-const Navbar = ({ filter, query, setQuery, setNoResult, setCars }) => {
+const Navbar = ({ filter, query, setQuery, setCars, setNoResult }) => {
+  const { likedCars, favouriteCount, hasNewItem } = useFavourites();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const results = useMemo(() => {
@@ -28,6 +30,10 @@ const Navbar = ({ filter, query, setQuery, setNoResult, setCars }) => {
       setCars([]);
       setNoResult(true);
     }
+  };
+  const showFavourites = () => {
+    setCars(likedCars);
+    setNoResult(likedCars.length === 0);
   };
 
   return (
@@ -62,7 +68,11 @@ const Navbar = ({ filter, query, setQuery, setNoResult, setCars }) => {
         {isMenuOpen && (
           <ul className=" w-full h-dvh py-6 md:hidden">
             {navLinks.map(({ icon, linkTitle, id }) => (
-              <li className=" not-last:mb-4  px-6 translate-y-1/2" key={id}>
+              <li
+                className=" not-last:mb-4  px-6 translate-y-1/2"
+                key={id}
+                onClick={() => linkTitle === "Favourites" && showFavourites()}
+              >
                 <a href="#" className="flex items-center gap-4 w-full">
                   {" "}
                   {icon}
@@ -74,10 +84,17 @@ const Navbar = ({ filter, query, setQuery, setNoResult, setCars }) => {
         )}
         <div className="items-center gap-4 hidden md:flex">
           <ul className=" flex justify-between items-center gap-4 ">
-            {navLinks.map(({ icon, id }) => (
-              <li className="nav-link-container" key={id}>
+            {navLinks.map(({ icon, id, linkTitle }) => (
+              <li
+                className="nav-link-container"
+                key={id}
+                onClick={() => linkTitle === "Favourites" && showFavourites()}
+              >
                 <a href="#">
-                  <span className="notify-color"></span> {icon}
+                  {icon}
+                  {linkTitle === "Favourites" && hasNewItem && (
+                    <span className="notify-color"></span>
+                  )}
                 </a>
               </li>
             ))}

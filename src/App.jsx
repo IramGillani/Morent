@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import MainSection from "./MainSection";
 import { useEffect, useState } from "react";
 import { useDebounce } from "react-use";
+import { carsData } from "./data";
 
 function App() {
   const [openSidebar, setOpenSidebar] = useState(false);
@@ -11,9 +12,14 @@ function App() {
   const [noResult, setNoResult] = useState(false);
   const [debounceSearchTerm, setDebounceSearchTerm] = useState("");
 
-  useDebounce(() => setDebounceSearchTerm(query), 500, [query]);
+  useDebounce(
+    () => {
+      setDebounceSearchTerm(query);
+    },
+    500,
+    [query]
+  );
 
-  useEffect(() => {}, []);
   return (
     <>
       <Navbar

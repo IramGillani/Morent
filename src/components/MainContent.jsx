@@ -2,7 +2,14 @@ import { useState, useEffect } from "react";
 import { carsData } from "../data";
 import Card from "./Card";
 
-export default function CarGrid({ cars, setCars }) {
+export default function CarGrid({
+  cars,
+  setCars,
+  favouriteCount,
+  setFavouriteCount,
+  likedCars,
+  setLikedCars,
+}) {
   const itemsPerPage = 6;
   const [visibleCount, setVisibleCount] = useState(itemsPerPage);
 
@@ -40,7 +47,17 @@ export default function CarGrid({ cars, setCars }) {
         gap-6 py-8 px-2"
       >
         {cars.slice(0, visibleCount).map((car) => (
-          <Card key={car.id} {...car} category={car?.category} />
+          <Card
+            car={car}
+            key={car.id}
+            {...car}
+            category={car?.category}
+            favouriteCount={favouriteCount}
+            setFavouriteCount={setFavouriteCount}
+            likedCars={likedCars}
+            setLikedCars={setLikedCars}
+            id={car.id}
+          />
         ))}
       </div>
 

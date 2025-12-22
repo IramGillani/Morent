@@ -3,7 +3,16 @@ import MainContent from "./components/MainContent";
 import BookingInfo from "./BookingInfo";
 import Sidebar from "./components/Sidebar";
 
-const MainSection = ({ openSidebar, cars, setCars, noResult }) => {
+const MainSection = ({
+  openSidebar,
+  cars,
+  setCars,
+  noResult,
+  favouriteCount,
+  setFavouriteCount,
+  likedCars,
+  setLikedCars,
+}) => {
   return (
     <>
       {" "}
@@ -20,12 +29,18 @@ const MainSection = ({ openSidebar, cars, setCars, noResult }) => {
 
           {noResult ? (
             <div className="text-xl text-center ">
-              <h3>No Results Found Matcing Your Search
-              </h3>
+              <h3>No Results Found Matcing Your Search</h3>
               <p className="mt-4 text-sm">Try another searchTerm</p>
             </div>
           ) : (
-            <MainContent cars={cars} setCars={setCars} />
+            <MainContent
+              cars={cars}
+              setCars={setCars}
+              favouriteCount={favouriteCount}
+              setFavoriteCount={setFavouriteCount}
+              likedCars={likedCars}
+              setLikedCars={setLikedCars}
+            />
           )}
         </div>
       </main>

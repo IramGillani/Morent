@@ -15,7 +15,6 @@ export const carsData = {
   sports: [
     {
       id: 1,
-
       name: "Porsche 911 Carrera",
       fuelTankCapacity: "63 L",
       rent: 90.25,
@@ -33,7 +32,6 @@ export const carsData = {
     },
     {
       id: 2,
-
       name: "Chevrolet Corvette",
       fuelTankCapacity: "70 L",
       rent: 87.49,
@@ -51,7 +49,6 @@ export const carsData = {
     },
     {
       id: 3,
-
       name: "Ford Mustang GT",
       fuelTankCapacity: "61 L",
       rent: 53.4,
@@ -69,7 +66,6 @@ export const carsData = {
     },
     {
       id: 4,
-
       name: "Nissan GT-R",
       fuelTankCapacity: "74 L",
       rent: 88.66,
@@ -87,7 +83,6 @@ export const carsData = {
     },
     {
       id: 5,
-
       name: "Lamborghini Huracán",
       fuelTankCapacity: "83 L",
       rent: 91.2,
@@ -105,7 +100,6 @@ export const carsData = {
     },
     {
       id: 6,
-
       name: "Ferrari F8 Tributo",
       fuelTankCapacity: "78 L",
       rent: 92.8,
@@ -123,7 +117,6 @@ export const carsData = {
     },
     {
       id: 7,
-
       name: "McLaren 720S",
       fuelTankCapacity: "72 L",
       rent: 93.5,
@@ -141,7 +134,6 @@ export const carsData = {
     },
     {
       id: 8,
-
       name: "Aston Martin Vantage",
       fuelTankCapacity: "73 L",
       rent: 85.0,
@@ -159,7 +151,6 @@ export const carsData = {
     },
     {
       id: 9,
-
       name: "Jaguar F-Type",
       fuelTankCapacity: "70 L",
       rent: 78.9,
@@ -177,7 +168,6 @@ export const carsData = {
     },
     {
       id: 10,
-
       name: "Toyota GR Supra",
       fuelTankCapacity: "52 L",
       rent: 51.9,
@@ -195,7 +185,6 @@ export const carsData = {
     },
     {
       id: 11,
-
       name: "Mazda MX-5 Miata",
       fuelTankCapacity: "45 L",
       rent: 30.77,
@@ -213,7 +202,6 @@ export const carsData = {
     },
     {
       id: 12,
-
       name: "Audi R8",
       fuelTankCapacity: "73 L",
       rent: 89.5,
@@ -231,7 +219,6 @@ export const carsData = {
     },
     {
       id: 13,
-
       name: "BMW Z4 Roadster",
       fuelTankCapacity: "52 L",
       rent: 51.0,
@@ -249,7 +236,6 @@ export const carsData = {
     },
     {
       id: 14,
-
       name: "Porsche Cayman 718",
       fuelTankCapacity: "54 L",
       rent: 70.0,
@@ -269,7 +255,6 @@ export const carsData = {
   suv: [
     {
       id: 15,
-      id: 15,
       name: "Toyota Land Cruiser",
       fuelTankCapacity: "110 L",
       rent: 66,
@@ -286,7 +271,6 @@ export const carsData = {
         "Perfect for families and adventurers, offering space, comfort, and rugged capability.",
     },
     {
-      id: 16,
       id: 16,
       name: "Range Rover Sport",
       fuelTankCapacity: "90 L",
@@ -305,7 +289,6 @@ export const carsData = {
     },
     {
       id: 17,
-      id: 17,
       name: "BMW X5",
       fuelTankCapacity: "80 L",
       rent: 60,
@@ -323,7 +306,6 @@ export const carsData = {
     },
     {
       id: 18,
-      id: 18,
       name: "Mercedes-Benz G-Class",
       fuelTankCapacity: "100 L",
       rent: 93.5,
@@ -340,7 +322,6 @@ export const carsData = {
         "Perfect for families and adventurers, offering space, comfort, and rugged capability.",
     },
     {
-      id: 19,
       id: 19,
       name: "Audi Q7",
       fuelTankCapacity: "75 L",
@@ -514,7 +495,6 @@ export const carsData = {
   mpv: [
     {
       id: 29,
-      id: 29,
       name: "Toyota Innova Crysta",
       fuelTankCapacity: "55 L",
       rent: 24,
@@ -532,7 +512,6 @@ export const carsData = {
     },
     {
       id: 30,
-
       name: "Kia Carnival",
       fuelTankCapacity: "60 L",
       rent: 38,
