@@ -1,9 +1,8 @@
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import MainSection from "./MainSection";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDebounce } from "react-use";
-import { carsData } from "./data";
 
 function App() {
   const [openSidebar, setOpenSidebar] = useState(false);
@@ -22,21 +21,24 @@ function App() {
 
   return (
     <>
-      <Navbar
-        filter={setOpenSidebar}
-        query={debounceSearchTerm}
-        setQuery={setDebounceSearchTerm}
-        setCars={setCars}
-        setNoResult={setNoResult}
-      />
-      <MainSection
-        openSidebar={openSidebar}
-        setQuery={setQuery}
-        cars={cars}
-        setCars={setCars}
-        noResult={noResult}
-      />
-      <Footer />
+      <main className="w-full mx-auto max-w-full ">
+        {" "}
+        <Navbar
+          filter={setOpenSidebar}
+          query={debounceSearchTerm}
+          setQuery={setDebounceSearchTerm}
+          setCars={setCars}
+          setNoResult={setNoResult}
+        />
+        <MainSection
+          openSidebar={openSidebar}
+          setQuery={setQuery}
+          cars={cars}
+          setCars={setCars}
+          noResult={noResult}
+        />
+        <Footer />
+      </main>
     </>
   );
 }

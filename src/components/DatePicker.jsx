@@ -13,13 +13,12 @@ export function DatePicker({ value, change }) {
     <Popover>
       <PopoverTrigger asChild>
         <Button
-          variant="outline"
           className={cn(
-            "w-30 sm:w-50 justify-start text-left font-normal",
-            !value && "text-muted-foreground"
+            "w-30 sm:w-50 justify-start text-left font-normal ",
+            !value && "text-muted-foreground "
           )}
         >
-          {value ? format(value, "PPP") : <span>Select your date</span>}
+          {value ? format(value, "PPP") : <span>Select date</span>}
         </Button>
       </PopoverTrigger>
 

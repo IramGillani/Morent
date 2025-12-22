@@ -46,7 +46,6 @@ export default function TimePicker({ value, change }) {
     <Popover>
       <PopoverTrigger asChild>
         <Button
-          variant="outline"
           className={cn(
             "w-40 justify-start text-left font-normal",
             !finalTime && "text-muted-foreground"

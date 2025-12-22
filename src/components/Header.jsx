@@ -16,7 +16,7 @@ const Header = () => {
         <img
           src="./car1.png"
           alt="Nissan"
-          className="absolute bottom-0.5 right-1/8 w-50 h-40"
+          className="absolute bottom-0.5 right-1/8 w-50 h-40 "
         />
       </div>
       <div className="card-secondary w-full p-4 text-white rounded-lg relative h-80">
