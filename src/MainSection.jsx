@@ -2,10 +2,17 @@ import Header from "./components/Header";
 import MainContent from "./components/MainContent";
 import BookingInfo from "./BookingInfo";
 import Sidebar from "./components/Sidebar";
-import { useState } from "react";
-const MainSection = ({ openSidebar }) => {
-  const [cars, setCars] = useState([]);
 
+const MainSection = ({
+  openSidebar,
+  cars,
+  setCars,
+  noResult,
+  favouriteCount,
+  setFavouriteCount,
+  likedCars,
+  setLikedCars,
+}) => {
   return (
     <>
       {" "}
@@ -19,7 +26,22 @@ const MainSection = ({ openSidebar }) => {
         >
           <Header />
           <BookingInfo />
-          <MainContent cars={cars} setCars={setCars} />
+
+          {noResult ? (
+            <div className="text-xl text-center ">
+              <h3>No Results Found Matcing Your Search</h3>
+              <p className="mt-4 text-sm">Try another searchTerm</p>
+            </div>
+          ) : (
+            <MainContent
+              cars={cars}
+              setCars={setCars}
+              favouriteCount={favouriteCount}
+              setFavoriteCount={setFavouriteCount}
+              likedCars={likedCars}
+              setLikedCars={setLikedCars}
+            />
+          )}
         </div>
       </main>
     </>
