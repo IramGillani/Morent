@@ -16,7 +16,7 @@ const MainSection = ({
   return (
     <>
       {" "}
-      <main className="grid grid-cols-4 w-full bg-[#dee3ec]">
+      <main className="grid grid-cols-4 w-full bg-[#dee3ec] md:mt-14 mt-26">
         {openSidebar && <Sidebar cars={cars} setCars={setCars} />}
 
         <div

@@ -20,7 +20,7 @@
     background-color: #fff;
   }
   nav {
-    @apply flex flex-wrap justify-between items-center text-secondry-text md:px-4 py-2 gap-4;
+    @apply flex fixed z-100 top-0 left-0 right-0 bg-white/80 backdrop-blur-md flex-wrap justify-between items-center text-secondry-text md:px-4 py-2 gap-4;
   }
   h1 {
     @apply capitalize text-2xl tracking-wide font-bold text-white;

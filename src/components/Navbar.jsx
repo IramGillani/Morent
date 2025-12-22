@@ -106,6 +106,25 @@ const Navbar = ({ filter, query, setQuery, setCars, setNoResult }) => {
             />
           </ul>
         </div>
+        <label htmlFor="search" className="relative w-full sm:hidden block">
+          <input
+            type="text"
+            name="search"
+            id="search"
+            placeholder="Search something here"
+            className="rounded-3xl w-full pr-2 pl-10 py-2 outline-none  border-2 border-[#C3D4E9]"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <BiSearch
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary-text "
+            onClick={handleSearch}
+          />
+          <TbAdjustmentsHorizontal
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary-text "
+            onClick={() => filter((prev) => !prev)}
+          />
+        </label>
       </nav>
     </>
   );

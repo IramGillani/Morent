@@ -42,14 +42,16 @@ const Card = ({ car }) => {
         <img
           src={img}
           alt={alt}
-          className="object-cover object-center w-full h-52 "
+          loading="lazy"
+          className="object-cover object-center w-full aspect-4/3 min-w-[180px]"
         />
+
         <div className="flex gap-2 mb-4 mt-4 text-secondry-text justify-between">
-          <div className="flex gap-0.5 items-center">
+          <div className="flex gap-0.5 items-center text-nowrap">
             <FaGasPump />
             <span>{fuelTankCapacity}L</span>
           </div>
-          <div className="flex gap-0.5 items-center">
+          <div className="flex gap-0.5 items-center text-nowrap">
             {transmission === "Manual" ? (
               <TbSteeringWheel />
             ) : (

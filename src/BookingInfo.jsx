@@ -63,20 +63,21 @@ const BookingInfo = () => {
     return (
       <>
         <div className="rounded-md w-full bg-white p-6 flex flex-col gap-4">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 ">
             <span
               className={`w-4 h-4 rounded-full relative bg-tertiary-text after:content-[''] after:bg-primary-blue after:absolute after:w-2 after:h-2 after:rounded-full after:translate-1/2`}
             ></span>
             <h6 className="font-semibold">{target}</h6>
           </div>
-          <div className="grid grid-cols-3 gap-6 w-full">
-            <div className="flex flex-col gap-4">
+          <div className="grid grid-cols-3 gap-6 w-full items-center">
+            {/* Location */}
+            <div className="flex flex-col gap-1 ">
               <h6>Location</h6>{" "}
               <label htmlFor="location">
                 <select
                   name="location"
                   id="location"
-                  className="outline-none"
+                  className="text-sm "
                   onChange={(e) =>
                     handleChange(
                       target === "Pickup"
@@ -91,22 +92,21 @@ const BookingInfo = () => {
                       : formData.dropoffLocation
                   }
                 >
-                  <option value="" className={`text-tertiary-text`}>
-                    Select your city
+                  <option value="" className={`text-tertiary-text `}>
+                    Select city
                   </option>
                   {cities.map((city) => (
                     <option key={city.id} value={city.name}>
-                      {/* {console.log(pickupLocation)} */}
                       {city.name}
                     </option>
                   ))}
                 </select>
               </label>
             </div>
-            <div className="flex flex-col gap-4">
-              <h6>Date</h6>{" "}
+            {/* Date */}
+            <div className="flex flex-col ">
+              <h6 className="px-3">Date</h6>
               <label htmlFor="date">
-                {" "}
                 <DatePicker
                   value={
                     target === "Pickup"
@@ -123,8 +123,9 @@ const BookingInfo = () => {
                 />
               </label>
             </div>
-            <div className="flex flex-col gap-4">
-              <h6>Time</h6>
+            {/* Time */}
+            <div className="flex flex-col ">
+              <h6 className="px-3">Time</h6>
               <label htmlFor="time">
                 {" "}
                 <TimePicker
